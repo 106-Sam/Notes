@@ -1,5 +1,4 @@
 # OSCP Notes
-© 106_Sam
 ***
 ## Manging process
 
@@ -24,5 +23,17 @@ watch -n 2 <path/of/command/or/script>
 ```
 ---
 ## Downloading files
+Linux
+```bash
+wget -O <file_name> <full_url_path>
+curl -o <file_name> <full_url_path>
+axel -a -n <num:eg:20> -o <file_name> <full_url_path> (-n specify the number of connection)
+```
+Windows
+```
+powershell -command wget -o <file_name> <full_url_path>
+powershell -command curl -o <file_name> <full_url_path>
+powershell -command Invoke-WebRequest <url> -O <file.jpg>
+```
 
 ---
