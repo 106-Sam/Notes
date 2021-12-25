@@ -1,4 +1,5 @@
 # OSCP Notes
+© 106_Sam
 ***
 ## Manging process
 
