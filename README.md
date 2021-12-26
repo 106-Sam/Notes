@@ -30,7 +30,7 @@ curl -o <file_name> <full_url_path>
 axel -a -n <num:eg:20> -o <file_name> <full_url_path> (-n specify the number of connection)
 ```
 Windows
-```
+```powershell
 powershell -command wget -o <file_name> <full_url_path>
 powershell -command curl -o <file_name> <full_url_path>
 powershell -command Invoke-WebRequest <url> -O <file.jpg>
