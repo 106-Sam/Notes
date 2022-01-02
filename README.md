@@ -102,3 +102,27 @@ nc -nlvp <port>
  ```
  
 _3. Tranferring FIles with NetCat_
+
+note : dd(a disk copying utility(Forensics investigators))
+ 
+Linux &rarr; Windows
+ - on Windows
+ ```cmd
+ nc -nlvp 4444 > incoming.wxe
+ ```
+ - on Linux
+ ```bash
+ nc -nv <ip> <port> < /usr/share/windows-resources/binaries/wget.exe
+ ```
+ 
+Windows &rarr; Linux
+
+ -on Linux 
+ ```bash
+ nc -nvlp 4444 > incoming.txt
+ ```
+ 
+ -on Windows 
+ ```cmd
+ nc -nv <ip> <port> < outgoing.txt
+```
