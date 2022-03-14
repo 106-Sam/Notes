@@ -176,7 +176,7 @@ sudo socat TCP4-LISTEN:443 STDOUT
 Alice need to send Bob 
 - Linux &rarr; Windows
  - On Linux 
-     - ```bash
+     ```bash
      sudo socat TCP4-LISTEN:443,fork file:secret_passwords.txt
  ```
  - On Windows
