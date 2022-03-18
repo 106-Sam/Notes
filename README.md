@@ -236,3 +236,9 @@ press y;
     
     wget.exe -V
 ```
+| option | Description |
+|--- |--- |
+| -c | execute the supplied command |
+|new-object|cmdlet, which allows us to instantiate either a .Net Framework or a COM object|
+|WebClient class | used to access resources identified by a URI|
+|DownloadFile public method| Requires two key parameters a source location(URI),, and a target location where the retrieved data will be stored|
