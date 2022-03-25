@@ -282,3 +282,11 @@ _The process is reversed when dealing with bind shells. We first create the bind
 ```bash
  nc -nv <ip> <port>
 ```
+
+## Powercat
+Powercat is essentially the Powershell version of Netcat wrriten by `besimorhino`. It is a script we can download to a Windows host to leverage the strengths of PowerShell and simplifies the creation of bind/reverse shells 
+
+```bash
+ apt install powercat
+```
+_Which will place the script in /usr/share/windows-resources/powercat_
