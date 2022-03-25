@@ -108,7 +108,7 @@ note : dd(a disk copying utility(Forensics investigators))
 Linux &rarr; Windows
  - on Windows
  ```cmd
- nc -nlvp 4444 > incoming.wxe
+ nc -nlvp 4444 > incoming.exe
  ```
  - on Linux
  ```bash
