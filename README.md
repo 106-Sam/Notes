@@ -349,3 +349,4 @@ After script loaded:
 ```powershell
  powershell.exe -E "<encode_string of reverse shell>"
 ```
+# Wireshark Basics
