@@ -1,5 +1,5 @@
 # OSCP Notes
-===============
+
 > 106_Sam
 
 ## Table of Content
