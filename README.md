@@ -3,10 +3,11 @@
 > 106_Sam
 
 ## Table of Content
- [Post-Exploitation](#post-exploitation)
+ 1. [Mangaing Process](#managing-process)
+ 2. [Mangaing Process](#managing-process)
 
 
-## Manging process
+## Managing process
 
 _To suspend the job_ - `ctrl + z`  
 _To cancel the job_ - `ctrl + c`  
