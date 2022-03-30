@@ -13,7 +13,18 @@
  5. [Socat](#socat)
     - [Netcat vs Socat](#netcat-vs-socat)
     - [Socat File Transfers](#socat-file-transfers)
+    - [Socat Reverse Shells](#socat-reverse-shells)
     - [Socat Encrypt Bind Shells](#socat-encrypt-bind-shells)
+ 6. [PowerShell and Powercat](#powershell-and-powercat)
+    - [PowerShell File Transfers](#powershell-file-transfers)
+    - [PowerShell Reverse Shells](#powershell-reverse-shells)
+    - [PowerShell Bind Shells](#powershell-bind-shells)
+    - [PowerCat](#powercat)
+    - [PowerCat File Transfers](#powercat-file-transfers)
+    - [PowerCat Reverse Shells](#powercat-reverse-shells)
+    - [PowerCat Bind Shells](#powercat-bind-shells)
+    - [PowerCat Stand-Alone Payloads](#powercat-stand-alone-payloads)
+ 7. [WireShark Basics](#wireshark-basics)
 
 
 ## Managing process
