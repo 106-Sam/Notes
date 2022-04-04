@@ -29,7 +29,9 @@
     - [Launching Wireshark](#launching-wireshark)
     - [Capture Filters](#capture-filters)
     - [Display Filters](#display-filters)
-    - [Following TCP Streams](#following-tcp-streams) 
+    - [Following TCP Streams](#following-tcp-streams)
+ 8. [Tcpdump](#tcpdump)
+    -
 
 
 ## Managing process
@@ -411,6 +413,11 @@ _Capture > Capture filters > + sign to add our own capture filters_
 `Analyze > Display filters`
 
 ## Following TCP Streams
+
+`Follow > TCP Stream`
+
+# Tcpdump
+
 
 
 
