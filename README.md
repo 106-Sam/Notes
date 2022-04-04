@@ -26,7 +26,10 @@
     - [PowerCat Stand-Alone Payloads](#powercat-stand-alone-payloads)
  7. [WireShark](#wireshark)
     - [Wireshark Basics](#wireshark-basics)
-    - 
+    - [Launching Wireshark](#launching-wireshark)
+    - [Capture Filters](#capture-filters)
+    - [Display Filters](#display-filters)
+    - [Following TCP Streams](#following-tcp-streams) 
 
 
 ## Managing process
@@ -395,9 +398,21 @@ Wireshark uses Libpcap (on Linux) or Winpcap(on Windows) librares in order to ca
  sudo Wireshark
 ```
 
-## Capture Filterz
+## Capture Filters
 
-_net filter - to only capture traffic on the <192.168.0.0/3>_
+_net filter - to only capture traffic on the <192.168.0.0/24>_
+
+`net 10.11.1.0/24`
+
+_Capture > Capture filters > + sign to add our own capture filters_
+
+## Display filters
+
+`Analyze > Display filters`
+
+## Following TCP Streams
+
+
 
 
 
