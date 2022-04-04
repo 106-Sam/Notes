@@ -25,6 +25,8 @@
     - [PowerCat Bind Shells](#powercat-bind-shells)
     - [PowerCat Stand-Alone Payloads](#powercat-stand-alone-payloads)
  7. [WireShark](#wireshark)
+    - [Wireshark Basics](#wireshark-basics)
+    - 
 
 
 ## Managing process
@@ -384,5 +386,19 @@ After script loaded:
 _A network sniffer, like the industry staple *Wireshark* is a must-have tool for learning network protocols,analyzing network traffic, and debugging network services._
 
 ## Wireshark Basics
+
+Wireshark uses Libpcap (on Linux) or Winpcap(on Windows) librares in order to caputure packets from the network.
+
+## Lauching Wireshark
+
+```bash
+ sudo Wireshark
+```
+
+## Capture Filterz
+
+_net filter - to only capture traffic on the <192.168.0.0/3>_
+
+
 
 
