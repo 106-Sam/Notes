@@ -24,7 +24,7 @@
     - [PowerCat Reverse Shells](#powercat-reverse-shells)
     - [PowerCat Bind Shells](#powercat-bind-shells)
     - [PowerCat Stand-Alone Payloads](#powercat-stand-alone-payloads)
- 7. [WireShark Basics](#wireshark-basics)
+ 7. [WireShark](#wireshark)
 
 
 ## Managing process
@@ -380,4 +380,9 @@ After script loaded:
 ```powershell
  powershell.exe -E "<encode_string of reverse shell>"
 ```
-# Wireshark Basics
+# Wireshark
+_A network sniffer, like the industry staple *Wireshark* is a must-have tool for learning network protocols,analyzing network traffic, and debugging network services._
+
+## Wireshark Basics
+
+
